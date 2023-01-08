@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TP7ex4</title>
+    </head>
+    <body>
+        <form class="ff">
+ 
+            <p>
+               <label for="decimal"></label> 
+               <input type="text" id="decimal" name="decimal" placeholder="decimal">
+               <input type="button" name="submit1" value="&#8674;" onClick="xdecimal()">
+            </p>
+ 
+            <p>
+               <label for="hexadecimal"></label>
+               <input type="text" id="hexadecimal" name="hexadecimal" placeholder="hexadecimal">
+               <input type="button" name="submit2"  onClick="xhexadecimal()">
+            </p>
+ 
+           <p>
+           <label for="binaire"></label>
+               <input type="text" id="binaire" name="binaire" placeholder="binaire">
+               <input type="button" name="submit3"  onClick="xbinaire()">
+            </p>
+        
+        </form>
+
+
+      <script>
+
+        function xdecimal()
+            {
+
+                decimal = document.getElementById("decimal");
+                hexadecimal = document.getElementById("hexadecimal");
+                binaire = document.getElementById("binaire");
+             
+                hexadecimal.value = (decimal.value-0).toString(16);
+                binaire.value = (decimal.value-0).toString(2);
+            }
+ 
+        function xhexadecimal()
+            {
+                decimal = document.getElementById("decimal");
+                hexadecimal = document.getElementById("hexadecimal");
+                binaire = document.getElementById("binaire");
+             
+                decimal.value = parseInt(hexadecimal.value,16);
+                binaire.value = (parseInt(hexadecimal.value,16)).toString(2);
+            }
+ 
+        function xbinaire()
+            {
+                decimal = document.getElementById("decimal");
+                hexadecimal = document.getElementById("hexadecimal");
+                binaire = document.getElementById("binaire");
+             
+                decimal.value = parseInt(binaire.value,2);
+                hexadecimal.value = (parseInt(binaire.value,2)).toString(16);
+            }
+      </script>  
+    </body>
+</html>
